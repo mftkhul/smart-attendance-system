@@ -20,7 +20,7 @@
                     {% for students in student %}
                     <div class="row">
                         <div class="col-md-6">
-                            <h5>Student Name</h6>
+                            <h6>Student Name</h6>
                             <h6>
                             <p>
                                 {{students.name}}
@@ -45,22 +45,10 @@
                             <h5>Address</h5>
                             <p>
                                 {{students.address}}
-                            </p>                        </div>
-                        <div class="col-md-6">
-                            <h5>Some Of The Technologies Known</h5>
-                            <a href="#" class="badge badge-dark badge-pill">html5</a>
-                            <a href="#" class="badge badge-dark badge-pill">css3</a>
-                            <a href="#" class="badge badge-dark badge-pill">Python</a>
-                            <a href="#" class="badge badge-dark badge-pill">Java</a>
-                            <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
-                            <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
-                            <hr>
-                            <h5>Lectures Attended</h5>
-                            <span class="badge badge-primary"><i class="fa fa-user"></i> {{present}} Attended</span>
-                            <span class="badge badge-success"><i class="fa fa-cog"></i> {{absent}} Absentees</span>
-                            <!-- <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span> -->
-                            {% endfor %}
+                            </p>
                         </div>
+                            {% endfor %}
+
                     </div>
                 </div>
                 <div class="tab-pane" id="attendance">

@@ -17,10 +17,10 @@
     theme: "light2",
     animationEnabled: true,
     title:{
-      text: "SOUTH INDIAN EDUCATION SOCIETY"
+      text: "SMAN 05 TEGAL"
     },
     subtitles: [{
-      text: "BSCIT 3RD YEAR, 2019-20 as on {{date}} {{time}}",
+      text: "{{date}} {{time}}",
       fontSize: 20
     }],
     legend:{
@@ -35,8 +35,8 @@
       toolTipContent: "{name}: <strong>{y}%</strong>",
       indexLabel: "{name} - {y}%",
       dataPoints: [
-        { y: Present, name: "Students Absent", exploded: true , color:"red"},
-        { y: Absent, name: "Students Present"},
+        { y: Present, name: "Students Present", exploded: true , color:"green"},
+        { y: Absent, name: "Students Absent"},
       ]
     }]
   });
