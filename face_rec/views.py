@@ -41,7 +41,7 @@ def create_dataset(request):
             #wait for 100 miliseconds 
         if cv2.waitKey(100) & 0xFF == ord('q'):
             break
-        # break if the sample number is morethan 100
+        # break if the sample number is morethan 60
         elif sampleNum>60:
             break
     cam.release()
@@ -141,7 +141,7 @@ def TrackImages(request):
             cv2.putText(im,str(tt),(x,y+h), font, 1,(255,255,255),2)        
         attendance=attendance.drop_duplicates(subset=['Id'],keep='first')    
         cv2.imshow('im',im) 
-        if (cv2.waitKey(1)==ord('q')):
+        if (cv2.waitKey(5)==ord('q')):
             break
     ts = time.time()  
     date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
@@ -154,7 +154,9 @@ def TrackImages(request):
     return redirect('home')
 
 def addStudent(request):
+    # form = StudentForm()
     if request.method=='POST':
+        # form = StudentForm(request.POST)
         id = request.POST.get('rollno', '')
         name = request.POST.get('username','')
         address=request.POST.get('address', '')
@@ -208,7 +210,7 @@ def deleteStudent(request,pk):
 
 # @unauthenticated_user
 # @login_required(login_url='login')
-@allowed_users(allowed_roles=['teacher','admin'])
+@allowed_users(allowed_roles=['teacher','admin','user'])
 def home(request):
     return render(request,'face_rec/dashboard.html')
 
@@ -217,7 +219,7 @@ def logoutUser(request):
     return redirect('login')
 
 @login_required(login_url='login')
-@allowed_users(allowed_roles=['teacher','admin','student'])
+@allowed_users(allowed_roles=['teacher','admin','user'])
 def profile(request,pk):
     id = int(pk)
     request.FILES
@@ -251,9 +253,6 @@ def all_students(request):
     total_students=student_profile.objects.count()
     context={'student':student,'total_students':total_students,'total_students_present':total_students_present,'total_students_absent':total_students_absent}
     return render(request,'face_rec/total.html',context)
-
-def about(request):
-    return render(request,'face_rec/about.html')
    
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['teacher','admin'])

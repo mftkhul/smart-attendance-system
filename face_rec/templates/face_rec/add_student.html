@@ -133,7 +133,7 @@
 					<label>Description</label>
 					<input type="text" name="desc" placeholder="I Am student" required>
 				</div>
-				<!-- <div class="inputBox">
+				<div class="inputBox">
 					<label>Password</label>
 					<input type="password" name="password1" id="password1" placeholder="********" required>
 				</div>
@@ -142,24 +142,24 @@
 					<input type="password" name="password2" placeholder="********"  required oninput="check(this)">
 				</div>
 				<script language='javascript' type='text/javascript'>
-    				function check(input) 
+    				function check(input)
     				{
-        				if (input.value != document.getElementById('password1').value) 
+        				if (input.value != document.getElementById('password1').value)
         				{
             				input.setCustomValidity('Password Don’t Match');
-        				}	 
-        				else 
+        				}
+        				else
         				{
             				input.setCustomValidity('');
         				}
     				}
-				</script> -->
+				</script>
 				{{form.errors}}
 				<div class="inputBox">
 					<input type="submit" name="" value="Register Student">
 				</div>
-				<!-- <p class="forget">Forget Password ? <a href="#">Click Here</a></p> -->
-				<!-- <p class="forget">Already have an account? <a href="{% url 'login' %}">Login</a></p> -->
+				<p class="forget">Forget Password ? <a href="#">Click Here</a></p>
+				<p class="forget">Already have an account? <a href="{% url 'login' %}">Login</a></p>
 			</div>
 		</form>
 	</div>

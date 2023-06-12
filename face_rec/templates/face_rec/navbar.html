@@ -21,14 +21,11 @@
         		<a class="nav-link" href="{% url 'all_students' %}">All Students</a>
       		</li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'absent_students' %}">Absent Students</a>
+            <a class="nav-link" href="{% url 'report' %}">Presensi</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'report' %}">Report</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'send_file' %}">Send File</a>
-          </li>
+{#          <li class="nav-item">#}
+{#            <a class="nav-link" href="{% url 'send_file' %}">Send File</a>#}
+{#          </li>#}
     	</ul>
   	</div>
   <span class="hello-msg">Hello, {{request.user}}</span>

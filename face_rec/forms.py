@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 
 # class StudentForm(ModelForm):
 # 	class Meta():
-# 		model=Student
+# 		model= Student
 # 		fields='__all__'
-# 		exclude=['user']		
+# 		exclude=['user']
 
 class CreateUserForm(UserCreationForm):
 	class Meta:
